@@ -40,7 +40,7 @@ const About = () => {
           easier.
         </p>
         <a
-          className="bg-[#1DC6CB] text-[#ffff] hover:bg-[#FEBB76] duration-500 active:scale-1.2 px-6 md:px-8 2xl:px-9 py-2 md:py-3 rounded-full"
+          className="bg-[#1DC6CB] text-[#ffff] hover:bg-[#FEBB76] duration-500 active:scale-1.2 px-6 md:px-8 2xl:px-9 py-2 md:py-3 rounded-md"
           href="#contacts"
         >
           Contacts Us

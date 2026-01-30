@@ -42,7 +42,7 @@ const Navbar = () => {
             key={navList?.id}
             className={
               index === navManu.length - 1
-                ? "bg-[#1DC6CB] text-[#ffff] hover:bg-[#FEBB76] duration-500 active:scale-1.2 px-9 py-3 rounded-full"
+                ? "bg-[#1DC6CB] text-[#ffff] hover:bg-[#FEBB76] duration-500 active:scale-1.2 px-9 py-3 rounded-md"
                 : ""
             }
           >

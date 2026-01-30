@@ -23,7 +23,7 @@ const Filters = () => {
           <select
             value={filters.stops}
             onChange={(e) => setFilters({ ...filters, stops: e.target.value })}
-            className="h-10 md:h-11 lg:h-12 w-full appearance-none rounded-full px-4 pr-10 bg-white
+            className="h-10 md:h-11 lg:h-12 w-full appearance-none rounded-md px-4 pr-10 bg-white
                  focus:outline-none cursor-pointer"
           >
             <option value="any">Any</option>

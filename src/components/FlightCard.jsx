@@ -31,7 +31,7 @@ const FlightCard = ({ flight }) => {
       </p>
 
       {/* Action */}
-      <button className="mt-3 w-full bg-gray-100 text-[#000000] hover:text-[#ffff] duration-500 py-2 rounded-full hover:bg-[#FEBB76]">
+      <button className="mt-3 w-full bg-gray-100 text-[#000000] hover:text-[#ffff] duration-500 py-2 rounded-md hover:bg-[#FEBB76]">
         View Details
       </button>
     </div>

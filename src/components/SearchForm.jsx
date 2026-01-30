@@ -20,7 +20,7 @@ const SearchForm = ({ onSearch }) => {
       className="flex flex-col lg:flex-row justify-between items-center gap-5 w-full bg-gray-100 p-8 md:p-9 lg:p-10 rounded-md"
     >
       <input
-        className="h-10 md:h-11 lg:h-12 w-full lg:w-[18%] rounded-full px-4 bg-white focus:outline-none"
+        className="h-10 md:h-11 lg:h-12 w-full lg:w-[18%] rounded-md px-4 bg-white focus:outline-none"
         placeholder="From (e.g. DAC)"
         onChange={(e) =>
           setForm({
@@ -31,7 +31,7 @@ const SearchForm = ({ onSearch }) => {
         required
       />
       <input
-        className="h-10 md:h-11 lg:h-12 w-full lg:w-[18%] rounded-full px-4 bg-white focus:outline-none"
+        className="h-10 md:h-11 lg:h-12 w-full lg:w-[18%] rounded-md px-4 bg-white focus:outline-none"
         placeholder="To (e.g. DXB)"
         onChange={(e) =>
           setForm({
@@ -43,14 +43,14 @@ const SearchForm = ({ onSearch }) => {
       />
       <input
         type="date"
-        className="h-10 md:h-11 lg:h-12 w-full lg:w-[18%] rounded-full px-4 bg-white focus:outline-none cursor-pointer"
+        className="h-10 md:h-11 lg:h-12 w-full lg:w-[18%] rounded-md px-4 bg-white focus:outline-none cursor-pointer"
         onChange={(e) => setForm({ ...form, departureDate: e.target.value })}
         required
       />
       <Filters />
       <button
         type="submit"
-        className="h-10 md:h-11 lg:h-12 w-full lg:w-[18%] bg-[#1DC6CB] text-[#ffff] hover:bg-[#FEBB76] duration-500 active:scale-1.2 rounded-full"
+        className="h-10 md:h-11 lg:h-12 w-full lg:w-[18%] bg-[#1DC6CB] text-[#ffff] hover:bg-[#FEBB76] duration-500 active:scale-1.2 rounded-md"
       >
         Search
       </button>
