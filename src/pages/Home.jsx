@@ -6,6 +6,11 @@ import Filters from "../components/Filters";
 import FlightCard from "../components/FlightCard";
 import PriceChart from "../components/PriceChart";
 import Loader from "../components/Loader";
+import Hero from "../components/Hero";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import { Navigation } from "swiper/modules";
 
 const Home = () => {
   const { filteredFlights, setFlights } = useContext(FlightContext);
@@ -21,39 +26,58 @@ const Home = () => {
   };
 
   return (
-    <div className="p-6 grid grid-cols-1 md:grid-cols-4 gap-6">
-      <div className="md:col-span-4">
+    <div className="">
+      {/* Hero Secdtion */}
+      <Hero />
+      {/* Filter & Search */}
+      <div
+        id=""
+        className="px-4 md:px-8 lg:px-20 2xl:px-37.5 flex items-center justify-center py-12.5"
+      >
         <SearchForm onSearch={handleSearch} />
       </div>
 
-      <div>
-        <Filters />
-      </div>
+      {/* Flight List */}
+      <div
+        id="flight"
+        className="px-4 md:px-8 lg:px-20 2xl:px-37.5 flex flex-col lg:flex-row justify-between gap-5"
+      >
+        <div className="w-full lg:w-[60%]">
+          {loading && <Loader />}
 
-      <div className="md:col-span-2 space-y-4">
-        {loading && <Loader />}
+          {!loading && !searched && (
+            <div className="text-gray-500">Waiting For Search...</div>
+          )}
 
-        {!loading && !searched && (
-          <div className="text-center text-gray-500 py-6 font-semibold">
-            Search for flight!
-          </div>
-        )}
+          {!loading && searched && filteredFlights.length === 0 && (
+            <div className="text-red-500">We cannot get any flight!</div>
+          )}
 
-        {!loading && searched && filteredFlights.length === 0 && (
-          <div className="text-center text-gray-500 py-6 font-semibold">
-            We cannot get any flight!
-          </div>
-        )}
-
-        {!loading &&
-          filteredFlights.length > 0 &&
-          filteredFlights.map((flight, i) => (
-            <FlightCard key={i} flight={flight} />
-          ))}
-      </div>
-
-      <div>
-        {filteredFlights.length > 0 && <PriceChart flights={filteredFlights} />}
+          {!loading && filteredFlights.length > 0 && (
+            <Swiper
+              modules={[]}
+              navigation
+              spaceBetween={16}
+              breakpoints={{
+                0: { slidesPerView: 1 },
+                640: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 },
+              }}
+            >
+              {filteredFlights.map((flight, i) => (
+                <SwiperSlide key={i}>
+                  <FlightCard flight={flight} />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          )}
+        </div>
+        {/* PriceChart Section */}
+        <div className="lg:w-[40%] w-full">
+          {filteredFlights.length > 0 && (
+            <PriceChart flights={filteredFlights} />
+          )}
+        </div>
       </div>
     </div>
   );

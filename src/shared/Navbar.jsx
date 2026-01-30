@@ -29,7 +29,7 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="h-[8vh] md:h-[9vh] lg:h-[10vh] 2xl:h-[11vh] px-4 md:px-8 lg:px-20 2xl:px-37.5 flex items-center justify-between bg-[#ffff] sticky top-0 left-0 z-50 shadow">
+    <nav className="h-[8vh] md:h-[9vh] lg:h-[10vh] 2xl:h-[11vh] px-4 md:px-8 lg:px-20 2xl:px-37.5 flex items-center justify-between bg-gray-100 sticky top-0 left-0 z-50 shadow">
       {/* Logo */}
       <a className="flex items-center gap-2" href="#">
         <img src={logo} alt="logo" />
@@ -42,7 +42,7 @@ const Navbar = () => {
             key={navList?.id}
             className={
               index === navManu.length - 1
-                ? "bg-[#1DC6CB] text-[#ffff] hover:text-[#ffff] hover:bg-[#FEBB76] duration-500 active:scale-1.2 px-9 py-3 rounded-full"
+                ? "bg-[#1DC6CB] text-[#ffff] hover:bg-[#FEBB76] duration-500 active:scale-1.2 px-9 py-3 rounded-full"
                 : ""
             }
           >

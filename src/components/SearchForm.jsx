@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Filters from "./Filters";
 
 const SearchForm = ({ onSearch }) => {
   const [form, setForm] = useState({
@@ -16,10 +17,10 @@ const SearchForm = ({ onSearch }) => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="grid grid-cols-1 md:grid-cols-4 gap-4"
+      className="flex flex-col lg:flex-row justify-between items-center gap-5 w-full bg-gray-100 p-8 md:p-9 lg:p-10 rounded-md"
     >
       <input
-        className="border p-2 rounded"
+        className="h-10 md:h-11 lg:h-12 w-full lg:w-[18%] rounded-full px-4 bg-white focus:outline-none"
         placeholder="From (e.g. DAC)"
         onChange={(e) =>
           setForm({
@@ -30,7 +31,7 @@ const SearchForm = ({ onSearch }) => {
         required
       />
       <input
-        className="border p-2 rounded"
+        className="h-10 md:h-11 lg:h-12 w-full lg:w-[18%] rounded-full px-4 bg-white focus:outline-none"
         placeholder="To (e.g. DXB)"
         onChange={(e) =>
           setForm({
@@ -42,11 +43,17 @@ const SearchForm = ({ onSearch }) => {
       />
       <input
         type="date"
-        className="border p-2 rounded"
+        className="h-10 md:h-11 lg:h-12 w-full lg:w-[18%] rounded-full px-4 bg-white focus:outline-none cursor-pointer"
         onChange={(e) => setForm({ ...form, departureDate: e.target.value })}
         required
       />
-      <button className="bg-blue-600 text-white rounded p-2">Search</button>
+      <Filters />
+      <button
+        type="submit"
+        className="h-10 md:h-11 lg:h-12 w-full lg:w-[18%] bg-[#1DC6CB] text-[#ffff] hover:bg-[#FEBB76] duration-500 active:scale-1.2 rounded-full"
+      >
+        Search
+      </button>
     </form>
   );
 };
