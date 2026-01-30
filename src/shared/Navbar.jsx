@@ -33,7 +33,7 @@ const Navbar = () => {
       {/* Logo */}
       <a className="flex items-center gap-2" href="#">
         <img src={logo} alt="logo" />
-        <h4 className="text-[20px] font-medium">FlightSearch</h4>
+        <h4 className="text-[20px] font-medium">FlightFinder</h4>
       </a>
       {/* Large Screen  */}
       <ul className="lg:flex lg:items-center lg:gap-5 hidden font-medium">

@@ -11,6 +11,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
+import About from "../components/About";
+import Contacts from "../components/Contacts";
 
 const Home = () => {
   const { filteredFlights, setFlights } = useContext(FlightContext);
@@ -32,7 +34,7 @@ const Home = () => {
       {/* Filter & Search */}
       <div
         id=""
-        className="px-4 md:px-8 lg:px-20 2xl:px-37.5 flex items-center justify-center py-12.5"
+        className="px-4 md:px-8 lg:px-20 2xl:px-37.5 flex items-center justify-center py-10 md:py-15 lg:py-20"
       >
         <SearchForm onSearch={handleSearch} />
       </div>
@@ -40,7 +42,7 @@ const Home = () => {
       {/* Flight List */}
       <div
         id="flight"
-        className="px-4 md:px-8 lg:px-20 2xl:px-37.5 flex flex-col lg:flex-row justify-between gap-5"
+        className="px-4 md:px-8 lg:px-20 2xl:px-37.5 flex flex-col lg:flex-row justify-between gap-5 pb-10 md:pb-15 lg:pb-20"
       >
         <div className="w-full lg:w-[60%]">
           {loading && <Loader />}
@@ -79,6 +81,10 @@ const Home = () => {
           )}
         </div>
       </div>
+      {/* About Us */}
+      <About />
+      {/* Contacts Us */}
+      <Contacts />
     </div>
   );
 };

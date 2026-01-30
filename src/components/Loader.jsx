@@ -10,7 +10,7 @@ const Loader = ({ loading = true }) => {
   return (
     <div className="flex flex-col items-center justify-center py-10 gap-4">
       <PuffLoader
-        color="#2563EB"
+        color="#FEBB76"
         loading={loading}
         size={30}
         aria-label="Loading flights..."
