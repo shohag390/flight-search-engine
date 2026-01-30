@@ -8,11 +8,13 @@ import PriceChart from "../components/PriceChart";
 import Loader from "../components/Loader";
 
 const Home = () => {
-  const { setFlights, filteredFlights } = useContext(FlightContext);
+  const { filteredFlights, setFlights } = useContext(FlightContext);
   const [loading, setLoading] = useState(false);
+  const [searched, setSearched] = useState(false); // track if search happened
 
   const handleSearch = async (params) => {
     setLoading(true);
+    setSearched(true); // mark search started
     const data = await searchFlights(params);
     setFlights(data.data || []);
     setLoading(false);
@@ -30,13 +32,28 @@ const Home = () => {
 
       <div className="md:col-span-2 space-y-4">
         {loading && <Loader />}
-        {filteredFlights.map((flight, i) => (
-          <FlightCard key={i} flight={flight} />
-        ))}
+
+        {!loading && !searched && (
+          <div className="text-center text-gray-500 py-6 font-semibold">
+            Search for flight!
+          </div>
+        )}
+
+        {!loading && searched && filteredFlights.length === 0 && (
+          <div className="text-center text-gray-500 py-6 font-semibold">
+            We cannot get any flight!
+          </div>
+        )}
+
+        {!loading &&
+          filteredFlights.length > 0 &&
+          filteredFlights.map((flight, i) => (
+            <FlightCard key={i} flight={flight} />
+          ))}
       </div>
 
       <div>
-        <PriceChart flights={filteredFlights} />
+        {filteredFlights.length > 0 && <PriceChart flights={filteredFlights} />}
       </div>
     </div>
   );
