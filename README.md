@@ -1,16 +1,53 @@
-# React + Vite
+# Flight Finder – Smart Flight Search Engine
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Flight Finder is a modern, responsive flight search engine that helps users find the best flight options quickly and easily.  
+It provides real-time flight data, advanced filtering, live price visualization, and a smooth user experience.
 
-Currently, two official plugins are available:
+**Live Website:** https://flight-finder-sm.netlify.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## Key Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Flight Search**
+- Search flights by origin, destination, and date
+- Real-time flight data using Amadeus API
 
-## Expanding the ESLint configuration
+- **Live Price Chart**
+- Interactive price trends using Recharts
+- Updates instantly based on filters
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Advanced Filtering**
+- Filter by price range
+- Filter by number of stops
+- Multiple filters applied simultaneously
+
+- **Fully Responsive Design**
+- Optimized for mobile, tablet, and desktop
+
+- **Modern UI & Animations**
+- Tailwind CSS for clean design
+- AOS animations for smooth scrolling
+- Swiper slider for flight cards
+
+- **Smooth Loading Experience**
+- Initial loading screen with fade-in effect
+
+- **Contact Form**
+- Integrated with Formspree
+- Toast notifications for success & error messages
+
+---
+
+## Technologies Used
+
+- **Frontend:** React + Vite
+- **Styling:** Tailwind CSS
+- **API:** Amadeus Self-Service Flight API
+- **Charts:** Recharts
+- **Slider:** Swiper.js
+- **Animations:** AOS (Animate On Scroll)
+- **Forms:** Formspree
+- **Notifications:** react-toastify
+- **Routing:** React Router DOM
+- **Hosting:** Netlify
