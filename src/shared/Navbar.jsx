@@ -46,9 +46,7 @@ const Navbar = () => {
                 : ""
             }
           >
-            <a onClick={() => setOpen(!open)} href={navList?.path}>
-              {navList?.display}
-            </a>
+            <a href={navList?.path}>{navList?.display}</a>
           </li>
         ))}
       </ul>
@@ -59,8 +57,8 @@ const Navbar = () => {
         {navManu?.map((navList, index) => (
           <li key={navList?.id}>
             <a
-              className="hover:text-[#FEBB76] duration-500"
               onClick={() => setOpen(!open)}
+              className="hover:text-[#FEBB76] duration-500"
               href={navList?.path}
             >
               {navList?.display}
