@@ -1,10 +1,4 @@
-import {
-  ClipLoader,
-  GridLoader,
-  PacmanLoader,
-  PropagateLoader,
-  PuffLoader,
-} from "react-spinners";
+import { PuffLoader } from "react-spinners";
 
 const Loader = ({ loading = true }) => {
   return (

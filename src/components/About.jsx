@@ -6,10 +6,10 @@ const About = () => {
       id="about"
       className="px-4 md:px-8 lg:px-20 2xl:px-37.5 py-10 md:py-15 lg:py-20 bg-gray-100 flex flex-col lg:flex-row items-center justify-between"
     >
-      <div className="w-full lg:w-[50%]">
+      <div data-aos="zoom-in" className="w-full lg:w-[50%]">
         <img className="h-full lg:h-125" src={image} alt="image" />
       </div>
-      <div className="w-full lg:w-[50%]">
+      <div data-aos="fade-left" className="w-full lg:w-[50%]">
         <h4 className="text-[#1DC6CB] text-[18px] pb-2">
           Explore the world with confidence
         </h4>
